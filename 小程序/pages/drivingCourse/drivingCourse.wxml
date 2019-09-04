@@ -1,0 +1,103 @@
+<import src="../template/loading/loading.wxml"></import>
+
+
+<view class="loading-view" wx:if="{{!imgSrc||!bannerImageLoaded||!imageOnloaded}}"><template is="loading"></template></view>
+<image src="{{item.imgSrc}}" mode="aspectFit" class="image" wx:for="{{imageArr}}" wx:key="{{index}}" class="displayNo">
+</image>
+<image src="https://ferrari.3tilabs.com/h5/images/list_Banner1.png" onload="bannerImageLoad" class="displayNo"></image>
+
+
+<view>
+    <view class="container bold">
+        <view class="page-margin" wx:if="{{imgSrc&&bannerImageLoaded&&imageOnloaded}}">
+            <view class="banner-view">
+                <view class="shen-time" wx:if="{{day<=0?false:true}}">
+                    <!-- <image src="http://scrm.3tilabs.com/h5/images/calender.png" class="image" class="image"
+                        onload="onloadImg" style="display:none"></image> -->
+                    <!-- <view id="calender-day">
+                        {{onloadImage&&day?day:day}}
+    
+                    </view> -->
+                </view>
+                <swiper bindchange="bindchangeChange" class="banner">
+                    <block wx:for="{{bannerSrc}}" wx:key="{{index}}">
+                        <swiper-item>
+                            <image src="{{item.imgSrc}}" mode="aspectFit" class="image"></image>
+                        </swiper-item>
+                    </block>
+                </swiper>
+                <view class="indicator-dots">
+                    <!-- <view class="dot {{item.active?'active':''}}" wx:for="{{bannerSrc}}" wx:key="{{index}}"></view> -->
+                    <image src="{{item.active?'/images/banner2.png':'/images/banner1.png'}}" alt=""
+                        class="dot {{item.active?'active':''}}" wx:for="{{bannerSrc}}" wx:key="{{index}}" />
+                    <!-- <image src="/images/banner2.png" class="banner2" /> -->
+                </view>
+            </view>
+            <!-- <view class="text">
+                <view style="margin-bottom: 66rpx;font-size:16px;">欢迎来到法拉利<text class="english">Pilota</text>驾驶课程</view>
+                <view class="font-size14 margin-bottom42">1993年开创的Pilota法拉利驾驶课程是一个成功的教学项目。宗旨是为法拉利客户提供最高水准的技术和接待服务。
+                    确保客户在安全的环境中充分感受跃马跑车的强大性能。
+                </view>
+                <view class="font-size14 margin-bottom42">
+                    <text class="english">Pilota</text>法拉利驾驶课程仅提供给法拉利车主，让每一位法拉利车主有机会参加不同级别的进阶课程。
+                </view>
+                <view class="font-size14 margin-bottom42">课程的难度逐步加深，教学节奏适度，学员将被引导运用从先前课程中所掌握的经验、灵敏度和驾驶技能。</view>
+                <view class="font-size14 margin-bottom42">
+                    这一结构完整的驾驶课程能符合学员的不同期望。我们使用的赛车道具有高度的专业水准和精良的设施配备，而在这里，法拉利跑车和客户才是真正的主角。</view>
+            </view> -->
+        </view>
+
+        <image src="{{imgSrc}}" class="logo2" mode="widthFix" onload="imageOnload" wx:if="{{imgSrc&&bannerImageLoaded}}"></image>
+
+        <view class="car-video" wx:if="{{imgSrc&&bannerImageLoaded&&imageOnloaded}}">
+            <view style="position: relative">
+                <image src="/images/list_video.png" id="play" bindtap="bindtapClick" hidden="{{!videoShow}}"></image>
+                <image src="/images/list_titlepage.png" hidden="{{!videoShow}}" mode="aspectFit" bindtap="bindtapClick">
+                </image>
+            </view>
+            <video src="{{videoSrc}}" id="video" hidden="{{videoShow}}" enable-play-gesture="true"
+                bindended="videoBindTap"></video>
+        </view>
+
+
+
+        <view class="page-margin" wx:if="{{imgSrc&&bannerImageLoaded&&imageOnloaded}}">
+            <view class="title-text">驾驶课程</view>
+            <navigator url="../experience/experience">
+                <view class="carClass">
+                    <view class="texts">
+                        <text>体验驾驶课程</text>
+                        <text>9月15至19日</text>
+                        <text>浙江</text>
+                        <image src="/images/path.png" id="image"></image>
+                    </view>
+                    <image src="/images/experience.png"></image>
+                    <image src="/images/count-time.png"></image>
+                </view>
+            </navigator>
+
+            <navigator url="../index/index">
+                <view class="carClass" bindtap="runClass">
+                    <view class="texts">
+                        <text>运动驾驶课程</text>
+                        <text>9月20至21日</text>
+                        <text>浙江</text>
+                        <image src="/images/path.png" id="image"></image>
+                    </view>
+                    <image src="/images/sports.png"></image>
+                    <image src="/images/list_sportslogo.png" style="width:197rpx;heihgt:46rpx;"></image>
+                </view>
+            </navigator>
+            <view style="height: 34rpx"></view>
+        </view>
+    </view>
+
+
+
+    <navigator class="search-dealer" url="/pages/dealerSearch/dealerSearch" open-type="navigate"
+    wx:if="{{imgSrc&&bannerImageLoaded&&imageOnloaded}}"
+        >
+        <image src="/images/icon-find.png"></image>
+    </navigator>
+
+</view>

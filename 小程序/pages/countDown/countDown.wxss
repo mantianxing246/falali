@@ -1,0 +1,340 @@
+@import './component/machine.wxss';
+
+.countDown_container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loading {
+  height: 15px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading text {
+  display: inline-block;
+  width: 15px;
+  height: 100%;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: #d71f27;
+  animation: load 1.04s ease infinite;
+}
+
+.loading text:last-child {
+  margin-right: 0px;
+}
+
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading text:nth-child(1) {
+  animation-delay: 0.13s;
+}
+
+.loading text:nth-child(2) {
+  animation-delay: 0.26s;
+}
+
+.loading text:nth-child(3) {
+  animation-delay: 0.39s;
+}
+
+.loading text:nth-child(4) {
+  animation-delay: 0.52s;
+}
+
+.loading text:nth-child(5) {
+  animation-delay: 0.65s;
+}
+
+audio {
+  display: none;
+}
+
+.flag {
+  display: none;
+}
+
+.detail_content {
+  display: none;
+}
+
+.lastCountContiner {
+  /* width:240rpx; */
+  height: 280rpx;
+  overflow-y: hidden;
+  font-size: 0;
+}
+
+page {
+  overflow-x: hiddden;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes bg_size {
+  0% {
+    /* background-size: 100% 300%; */
+    transform: scale(2);
+  }
+
+  /* 50% {
+    background-size: 100% 240%;
+     background-position: 0 60%;
+  } */
+
+  100% {
+    /* background-size: 100% 180%; */
+    background-position: 0 60%;
+    transform: scale(1);
+  }
+}
+
+@keyframes car_move {
+  0% {
+    transform: translate(-50%, -30%) scale(1);
+  }
+
+  50% {
+    transform: translate(-80%, -30%) scale(1.5);
+  }
+
+  100% {
+    transform: translate(-50%, -30%) scale(2.4);
+  }
+}
+
+.logo {
+  position: absolute;
+  /* left: 50%; */
+  top: 40rpx;
+  width: 100vw;
+  /* height: 75rpx; */
+  z-index: 9999;
+}
+
+.countDown_time_car {
+  position: absolute;
+  /* left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0; */
+  width: 100%;
+  /* height: 50px; */
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  z-index: 12;
+}
+
+.countDown_time {
+  /* height: 340rpx; */
+  transform: translateX(-20rpx);
+}
+
+.countDown_time_count {
+  position: relative;
+}
+
+.countDown_time_count text {
+  position: absolute;
+  bottom: 40rpx;
+  right: -14rpx;
+  font-size: 28rpx;
+}
+
+.img_car_view {
+  width: 100%;
+  display: flex;
+  height: 396rpx;
+  justify-content: center;
+  position: relative;
+}
+
+.img_car {
+  width: 260rpx;
+  height: 180rpx;
+  /* transform: scale(2.2); */
+  margin-top: 86rpx;
+  position: absolute;
+  /* transform: translateY(-110rpx);
+  transform: scale(0.9) */
+}
+
+.m_r_30 {
+  margin-right: 30rpx;
+}
+
+.m_r_10 {
+  margin-right: 10rpx;
+}
+
+.active_msg {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 999;
+  bottom: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 150rpx; */
+}
+/* .active_msg1 {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 999;
+  bottom: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+
+.canvas1 {
+  width: 100vw;
+  height: 40vh;
+  position: relative;
+  top: -50rpx;
+  transform: translateZ(0);
+  /* z-index: 10; */
+}
+
+
+.default_entry {
+  width: 80rpx;
+  height:  80rpx;
+  margin-bottom: 12rpx;
+  border-radius: 50%;
+}
+
+.borderShow {
+  box-shadow: red 0px 0px 30px;
+  animation: entry_btn 1s linear infinite alternate;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes entry_btn {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.active_msg cover-view:nth-child(1) {
+  font-size: 28rpx;
+  color: #fff;
+  /* margin-bottom: 18rpx; */
+}
+
+/* .active_msg cover-view:nth-child(2), */
+/* .active_msg cover-view:nth-child(3),
+.active_msg cover-view:nth-child(4) {
+  font-size: 18rpx;
+  color: #dfdfdf;
+  margin-bottom: 10rpx;
+}
+
+.active_msg cover-view:last-child {
+  font-size: 22rpx;
+  color: #fff;
+} */
+
+.container_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  /* background-size:100% 100%; */
+}
+
+.Interlayer {
+  width: 100%;
+  height: 604rpx;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 12;
+}
+
+.key-view {
+  width: 100%;
+  height: 600rpx;
+  overflow: hidden;
+}
+
+/* 311px */
+.key {
+  width: 100%;
+  height: 624rpx;
+  background: url("https://ferrari.3tilabs.com/h5/images/key.jpg") no-repeat;
+  background-size: 100% 700%;
+  position: relative;
+  background-repeat: repeat-y;
+  z-index: 2;
+  background-position-y: 100%;
+  /* background-position-x: -50%; */
+  animation: key-animation 50s infinite linear;
+
+}
+
+@keyframes key-animation {
+  0% {
+    background-position-y: 100%;
+  }
+
+  100% {
+    background-position-y: 0;
+  }
+}
+
+.road-view {
+  width: 100%;
+  height: 460rpx;
+  overflow: hidden;
+  /* transform: translateY(-4rpx); */
+}
+
+/* 235px */
+.road {
+  width: 100%;
+  height: 470rpx;
+  background: url("https://ferrari.3tilabs.com/h5/images/road.jpg") no-repeat;
+  background-size: 100% 500%;
+  position: relative;
+  background-repeat: repeat-y;
+  animation: road 0.5s infinite steps(3);
+}
+
+@keyframes road {
+  0% {
+    background-position-y: 0;
+    transform: translateZ(0);
+  }
+
+  100% {
+    background-position-y: -1410rpx;
+    transform: translateZ(0);
+  }
+}

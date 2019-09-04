@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+    <title>法拉利</title>
+    <script type="text/javascript" src="./js/libs/zepto.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+</head>
+
+<body>
+    <div class="activity">
+        <img src="./images/01.jpg" />
+        <a href="http://812superfast.ferrari.com/en/start">
+            <img src="./images/02.jpg" />
+        </a>
+        <a href="http://gtc4lussot.ferrari.com/zh/">
+            <img src="./images/03.jpg" />
+        </a>
+        <a href="http://auto.ferrari.com/zh_CN/sports-cars-models/car-range/gtc4lusso/">
+            <img src="./images/04.jpg" />
+        </a>
+        <a href="https://portofino.ferrari.com/zh">
+            <img src="./images/05.jpg" />
+        </a>
+        <a href="http://auto.ferrari.com/zh_CN/sports-cars-models/car-range/ferrari-488-gtb/">
+            <img src="./images/06.jpg" />
+        </a>
+        <a href="http://auto.ferrari.com/zh_CN/sports-cars-models/car-range/488-spider/">
+            <img src="./images/08.jpg" />
+        </a>
+        <a href="https://auto.ferrari.com/zh_CN/sports-cars-models/car-range/ferrari-488-pista/">
+            <img src="./images/11.jpg" />
+        </a>
+        <a href="http://auto.ferrari.com/zh_CN/sports-cars-models/car-range/laferrari-aperta/">
+            <img src="./images/07.jpg" />
+        </a>
+        <a href="http://auto.ferrari.com/zh_cn/sports-cars-models/past-models/laferrari/">
+            <img src="./images/10.jpg" />
+        </a>
+        <a href="http://auto.ferrari.com/zh_CN/sports-cars-models/car-range/f12tdf/">
+            <img src="./images/09.jpg" />
+        </a>
+    </div>
+</body>
+<script src="./js/token.js"></script>
+<script>
+    //分享
+    ajax({
+        type: 'post',
+        url: "/api/share",
+        data: {
+            url: location.href,
+        },
+        success: function (res) {
+            var json_res = JSON.parse(res)
+            wx.config({
+                appId: json_res.appid, // 必填，公众号的唯一标识
+                timestamp: json_res.timestamp, // 必填，生成签名的时间戳
+                nonceStr: json_res.nonceStr, // 必填，生成签名的随机串
+                signature: json_res.signature, // 必填，签名
+                jsApiList: [
+                    'onMenuShareAppMessage',
+                ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            })
+            // console.log(json_res)
+
+            wx.ready(function () {
+                wx.onMenuShareAppMessage({
+                    title: '法拉利车主服务|现售车型', // 分享标题
+                    desc: '邀您一览法拉利现售车型', // 分享描述
+                    link: 'https://ferrari.3tilabs.com/h5/activity.html', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: 'https://ferrari.3tilabs.com/h5/images/share.jpg', // 分享图标
+                    success: function () {
+                        // 用户点击了分享后执行的回调函数
+                    }
+                })
+            })
+        },
+        error() {
+
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+<import src="../template/loading/loading.wxml"></import>
+<view class="loading-view" hidden="{{imgLoaded}}"><template is="loading"></template></view>
+
+
+
+<view class="container">
+    <view class="page-margin" hidden="{{!imgLoaded}}">
+        <view class="title-text">课程介绍</view>
+        <!-- <view class="jianjie"> -->
+        <!-- <view><text>迈向竞技驾驶的第一步</text></view>  -->
+        <!-- <text><text class="english">Pilota</text>法拉利运动驾驶课程拥有一套循序渐进的完整教学方案，旨在帮助学员全面了解运动驾驶的主要技巧。</text> -->
+        <!-- <text>帮助您全面了解竞技驾驶的主要技巧</text>        -->
+        <!-- </view> -->
+    </view>
+    <view class="logo-view" hidden="{{!imgLoaded}}">
+        <image src="/images/list_sportslogo.png" class="logo" mode="widthFix"></image>
+    </view>
+    <image mode="widthFix" src="{{imgSrc}}" class="logo2"></image>
+    <view class="page-margin">
+        <image src="/images/Sports_corso-pilota.png" class="car" mode="aspeectFit" hidden="{{!imgLoaded}}"></image>
+
+        <view class="car-video" wx:for="{{carVideoArr}}" wx:key="{{index}}">
+            <!-- <view style="text-align: center;"><text>{{item.text}}</text></view>
+                <view><text>{{item.text2}}</text></view> -->
+            <image mode="widthFix" src="{{item.imgSrc}}" class="logo2" onload="imgLoad" id="{{index}}" wx:if="{{imgSrc}}"></image>
+            <view hidden="{{!imgLoaded}}">
+                <view style="position: relative">
+                    <image src="/images/list_video.png" id="play" hidden="{{!item.videoShow}}" bindtap="playVideo"
+                        data-index="{{index}}" data-video="{{item.video}}"></image>
+                    <image src="{{item.imageSrc}}" hidden="{{!item.videoShow}}" mode="scaleToFill" bindtap="playVideo"
+                        data-index="{{index}}" data-video="{{item.video}}" style="height: {{item.height}}rpx"></image>
+                </view>
+                <video src="{{item.videoSrc}}" enable-play-gesture="true" hidden="{{item.videoShow}}"
+                    id="{{item.video}}" data-video="{{item.video}}" data-index="{{index}}"
+                    bindended="videoBindTap"></video>
+            </view>
+        </view>
+
+        <view class="bottom" hidden="{{!imgLoaded}}">
+            <view class="title-text">时间地点</view>
+            <view>时间：2019.09.20~2019.09.21</view>
+            <view>地点：浙江国际赛车场</view>
+        </view>
+    </view>
+</view>
+
+
+<navigator class="search-dealer" url="/pages/dealerSearch/dealerSearch" open-type="navigate" hidden="{{!imgLoaded}}">
+    <image src="/images/icon-find.png"></image>
+</navigator>

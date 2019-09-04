@@ -1,0 +1,76 @@
+@import "../template/loading/loading.wxss";
+.page-margin {
+    margin: 0 37rpx;
+    color: white;
+}
+.container {
+    height: 100vh;
+    background: #000;
+}
+
+.logo {
+    width: 180rpx;
+    /* height: 65rpx; */
+    display: block;
+    margin: 0 auto;
+}
+
+.jianjie {
+    font-size: 13px;
+    line-height: 50rpx;
+    /* margin-bottom: 65rpx; */
+}
+
+.jianjie view {
+    /* margin-bottom: 52rpx; */
+}
+
+.car {
+    width: 100%;
+    margin-bottom: 35rpx;
+}
+
+.car-video {
+    /* margin-bottom: 28rpx; */
+    /* line-height: 50rpx; */
+    font-size: 13px;
+    color: white;
+    /* height: 240px; */
+}
+
+.car-video image {
+    width: 100%;
+}
+
+.car-video text {
+    margin-bottom: 97rpx;
+}
+
+.car-video video {
+    width: 100%;
+}
+
+#play {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50rpx;
+    margin-top: -50rpx;
+}
+
+.bottom{
+    font-size: 15px;
+}
+.bottom view:nth-of-type(1) {
+    margin-bottom: 34rpx;
+}
+
+.bottom view:nth-of-type(2) {
+    padding-bottom: 60rpx;
+}
+.logo2{
+    width: 100%;
+    margin-bottom: 20rpx;
+}

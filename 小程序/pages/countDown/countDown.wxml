@@ -1,0 +1,60 @@
+<import src="component/machine.wxml" />
+<view class='countDown_container'>
+  <!-- <image class='flag' src='/images/car.png'></image> -->
+
+  <image class="flag" src="https://ferrari.3tilabs.com/h5/images/road.jpg" bindload="roadLoad"></image>
+  <image class="flag" src="https://ferrari.3tilabs.com/h5/images/key.jpg" bindload="keyLoad"></image>
+  <image class="flag" src='/images/count-time-logo.png' onload="countTimeLogo"></image>
+  <view class="loading" wx:if="{{!loaded || !ajaxLoaded||!keyLoaded||!countTimeLogoLoaded}}">
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
+    <text></text>
+  </view>
+
+  <!-- <audio id="myAudio" src="{{myAudio}}"></audio>
+  <audio id="lastVideo" src="{{lastVideo}}"></audio> -->
+  <view wx:if="{{loaded && ajaxLoaded && keyLoaded && countTimeLogoLoaded}}">
+    <!-- 背景图片 -->
+    <view class='container_bg'>
+      <view class="key-view">
+        <view class="key"></view>
+      </view>
+      <view class="road-view">
+        <view class="road"></view>
+      </view>
+    </view>
+
+    <image src="/images/Interlayer.png" class="Interlayer"></image>
+
+    <image src='/images/count-time-logo.png' class='logo' mode="widthFix"></image>
+    <view class="countDown_time_car">
+      <!-- <view> -->
+      <view class='countDown_time'>
+        <view class='countDown_time_text'>倒计时</view>
+        <view class='countDown_time_count'>
+          <view class='img_count_content'>
+            <template is="machine" data="{{...machine}}"></template>
+          </view>
+          <text>天</text>
+        </view>
+        <!-- </view> -->
+
+        <!-- <view class="img_car_view"> -->
+
+        <!-- <image class='img_car {{carFadeIn?"carFadeIn":""}}' src='/images/car.png' id="img_car" onload="img_car_onload" style="{{carAnimationStyle}}"></image> -->
+        <!-- </view> -->
+      </view>
+      <canvas canvas-id="firstCanvas" class="canvas1"></canvas>
+    </view>
+    <!-- <cover-view> -->
+    <view class='active_msg'>
+      <!-- <cover-view>法 拉 利 P i l o t a 驾 驶 培 训 课 程</cover-view> -->
+      <image class='default_entry borderShow' src='../../images/start-up-button1.png' bindtap="gotoNext">
+      </image>
+      <!-- <cover-view>开启驾驶之旅</cover-view> -->
+      <!-- </image> -->
+    </view>
+  </view>
+</view>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+    <title>查找经销商</title>
+    <link rel="stylesheet" type="text/css" href="./css/mobileSelect.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/libs/zepto.min.js"></script>
+    <script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+</head>
+
+<body>
+    <div class="distributor">
+        <div class="dcommpany" id="company">
+            <img src="./images/ferrari-logo.png" class="dferrari-logo" id="company-logo" />
+            <div class="dcompany-info" id="company-info">
+                <img src="">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+        <div class="dselect">
+            <div class="dselect-city">
+                <span id="select-city">选择市</span>
+                <em></em>
+            </div>
+            <div class="dselect-distributor">
+                <span id="select-distributor">选择经销商</span>
+                <em></em>
+            </div>
+        </div>
+        <p class="dtel">
+            <a href="tel:" id="company-tel"></a>
+        </p>
+        <div class="dnavigator">
+            <!-- <a href="#" id="adress">
+                 <img src="./images/icon-navigation.png" id="navigator" />
+                </a> -->
+            <img src="./images/icon-navigation.png" id="navigator" />
+        </div>
+        <div class="damap" id="amap-wrapper"></div>
+        <div class="alert" id="alert-panel">
+            <div class="alert-container">
+                <i class="alert-close"></i>
+                <div class="alert-text"></div>
+            </div>
+        </div>
+        <div class="alert2" id="alert-panel">
+            <div style="display: flex;align-items:center;flex-direction:column">
+                <img src="./images/ts.png" alt="">
+                <button class="alert2Button" href="">知道了</button>
+            </div>
+        </div> 
+    </div>
+
+    <!-- 	<script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.2.0/vconsole.min.js"></script>
+	<script type="text/javascript">
+		var vConsole = new VConsole();
+    </script> -->
+    <script type="text/javascript" src="./js/token.js"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=c429f9cdbda47397f388d9bd37aaee59&plugin=AMap.Driving,AMap.Geolocation"></script>
+    <script type="text/javascript" src="./js/libs/mobileSelect.min.js"></script>
+    <script type="text/javascript" src="./js/distributor.js"></script>
+</body>
+
+</html>

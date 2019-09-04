@@ -1,0 +1,39 @@
+<import src="../template/loading/loading.wxml"></import>
+<view class="loading-view" wx:if="{{!imgSrc}}"><template is="loading"></template></view>
+
+<view wx:if="{{imgSrc}}">
+    <view class="container bold" hidden="{{fullScreen}}">
+        <view class="page-margin">
+            <view class="title-text">课程介绍</view>
+            <image src="/images/count-time.png" class="logo" mode="widthFix"></image>
+            <!-- <view class="jianjie"> -->
+                <!-- <view><text><text class="english">Pilota</text>体验驾驶课程的理念是帮助法拉利新车主学习法拉利跑车的操控方法，并在一个安全受控的赛道环境中体验跑车的高性能表现。</text></view>
+                <text>在拥有多年法拉利驾驶经验的专业赛车手的指导下，您将在专业的赛道上感受马力的酣畅淋漓。</text> -->
+                <!-- <view>带领中国法拉利车主真正了解法拉利，跃享赛代激情。</view> -->
+            <!-- </view> -->
+            <!-- <image src="/images/Experience-photo.png" class="car" mode="aspectFit"></image> -->
+        </view>
+        <image src="{{imgSrc}}" mode="widthFix" class="logo2"></image>
+        <!-- <image src="/images/Experience-photo.png" class="car" mode="aspectFit"></!--> 
+        <!-- <view class="page-margin">
+            <text style="font-size: 14px;">中国车主专享的体验驾驶课程，带您安全驾驶，学会应对各种路面情况，跃享赛道激情。</text>
+        </view> -->
+        <view class="car-video"> 
+            <view style="position: relative">
+                <image src="/images/list_video.png" id="play" bindtap="bindtapClick" hidden="{{!videoShow}}"></image>
+                <image src="/images/Experience_video.png" hidden="{{!videoShow}}" mode="widthFix" bindtap="bindtapClick"></image>
+            </view>
+            <video src="{{videoSrc}}" hidden="{{videoShow}}" id="video" enable-play-gesture="true" bindended="videoBindTap"></video>
+        </view>
+        <view class="page-margin">
+            <view class="title-text">时间地点</view>
+            <view class="bottom">
+                <view>时间：2019.09.15~2019.09.19</view>
+                <view>地点：浙江国际赛车场</view>
+            </view>
+        </view>
+    </view> 
+    <navigator class="search-dealer"  url="/pages/dealerSearch/dealerSearch" open-type="navigate" hidden="{{fullScreen}}">
+        <image src="/images/icon-find.png"></image>
+    </navigator>
+</view>

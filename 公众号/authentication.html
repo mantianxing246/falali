@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+    <title>法拉利</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+        let redi = localStorage.getItem("redi")
+        if (redi) {
+            // localStorage.setItem("redi", false)
+        } else if (location.href.indexOf("api/redi") == -1) {
+            location.replace("https://ferrari.3tilabs.com/api/redi")
+            localStorage.setItem("redi", true)
+        }
+    </script>
+    <script type="text/javascript" src="./js/libs/zepto.min.js"></script>
+    <script src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+</head>
+
+<body>
+    <div class="authentication" id="body" style="display: none">
+        <div class="logo">
+            <img src="./images/logo.png" alt="">
+            <h1>填写个人资料</h1>
+            <h5></h5>
+        </div>
+        <div class="content">
+            <div class="form-item flex icon icon-tel">
+                <input type="number" placeholder="手机号" class="flex-cli" id="usertel">
+            </div>
+            <div class="form-item flex icon icon-veri">
+                <input type="number" placeholder="短信验证码" class="flex-cli" id="userveri">
+                <span class="form-veri" id="btn-userveri">获取验证码</span>
+            </div>
+            <div class="form-item flex icon icon-user">
+                <input type="text" placeholder="姓" class="flex-cli" id="username1">
+            </div>
+            <div class="form-item flex icon icon-user">
+                <input type="text" placeholder="名" class="flex-cli" id="username2">
+            </div>
+        </div>
+        <footer>
+            <div class="btn" id="submit">车主认证</div>
+            <p class="tips">
+                通过车主认证，您可以即时接收服务消息<br />尊享服务触手可及
+            </p>
+        </footer>
+    </div>
+
+
+    <!-- 车主认证未通过 -->
+    <div class="alert" id="alert-error">
+        <div class="alert-container">
+            <i class="alert-close"></i>
+            <img src="./images/icon-cry.png" />
+            <div>车主认证未通过</div>
+        </div>
+    </div>
+    <!-- 车主认证通过 -->
+    <div class="alert" id="alert-success">
+        <div class="alert-container">
+            <i class="alert-close"></i>
+            <img src="./images/icon-success.png" />
+            <div>车主认证通过</div>
+        </div>
+    </div>
+
+    <!-- <div class="loading" style="display: none">
+        <img src="./images/timg.gif" alt="" style="width: 100%;">
+    </div> -->
+
+    <div class="rz" style="display: none">
+        <img src="./images/icon-success.png" alt="">
+        <div>恭喜您，已通过车主认证!</div>
+    </div>
+
+    <div class="loading">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- 选择未认证经销商 -->
+    <!-- <div class="alert" id="unverified">
+        <div class="unverified">
+            <div class="select-unverified">请选择尚未认证的经销商</div>
+            <div id="select-unverified">
+            </div>
+            <div id="selelct-button">
+                <button>取消</button>
+                <button id="sure-active">确定</button>
+            </div>
+        </div>
+    </div> -->
+    <script src="./js/token.js"></script>
+</body>
+<script type="text/javascript" src="./js/common.js"></script>
+<script type="text/javascript" src="./js/authentication.js"></script>
+
+</html>

@@ -1,0 +1,181 @@
+@import "../template/loading/loading.wxss";
+.page-margin {
+    margin: 0 37rpx;
+    color: white;
+}
+
+.banner {
+    height: 390rpx;
+}
+.banner-view{
+    position: relative;
+}
+
+.banner .image { 
+    width: 100%;
+    height: 390rpx;
+}
+
+.indicator-dots {
+    margin-top: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.dot {
+    width: 10rpx;
+    height: 10rpx;
+    /* border-radius: 50%; */
+    /* background: white; */
+    margin: 0 10rpx;
+    /* background: url("/images/banner1.png") no-repeat; */
+    /* background-size: 100%; */
+}
+.banner2{
+    width: 20rpx;
+    height: 10rpx;
+    position: absolute;
+}
+
+.active {
+    width: 20rpx;
+    height: 10rpx;
+    /* background: #e1021b; */
+    /* border-radius: 30rpx; */
+    /* margin: 0 10rpx; */
+    /* background: url("/images/banner2.png") no-repeat; */
+    /* background-size: 100%; */
+}
+
+.text {
+    margin-top: 66rpx;
+    margin-bottom: 65rpx;
+    font-size: 13px;
+}
+
+.font-size14 {
+    font-size: 14px;
+}
+
+.margin-bottom42 {
+    margin-bottom: 42rpx;
+}
+
+.car-video {
+    margin-bottom: 28rpx;
+    line-height: 50rpx;
+    font-size: 14px;
+    color: white;
+    height: 480rpx; 
+    position: relative;
+}
+.shen-time{
+    width: 30%;
+    position: absolute;
+    right: 0%;
+    top: 0rpx;
+    z-index: 9999;
+    text-align: center;
+    font-size: 12px;
+}
+#calender-day{
+    width: 130rpx;
+    height: 186rpx;
+    text-align: center;
+    line-height: 140rpx;
+    position: absolute;
+    /* background: url("https://ferrari.3tilabs.com/h5/images/calender.png"); */
+    background-size: 100% 100%;
+    font-size:46rpx;
+    top: 0rpx;
+    right:0;
+    transform: scale(0.7) translateY(-40rpx);
+}
+/* .calender{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}  */
+/* .shen-time .image{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 10%;
+    left:0;
+} */
+/* .shen-time view{
+    width: 100%;
+    position: absolute;
+    z-index: 333;
+    top: 16rpx;
+} */
+
+.car-video image {
+    width: 100%;
+}
+
+.car-video text {
+    margin-bottom: 97rpx;
+}
+
+.car-video video {
+    width: 100%;
+}
+
+#play {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50rpx;
+    margin-top: -50rpx;
+}
+
+.carClass {
+    background: #1a1a1a;
+    border-radius: 10rpx;
+    position: relative;
+    margin-bottom: 26rpx;
+    position: relative;
+}
+
+.carClass image:nth-of-type(1) {
+    width: 100%;
+    height: 397rpx;
+}
+
+.carClass image:nth-of-type(2) {
+    position: absolute;
+    top: 120rpx;
+    left: 24rpx;
+    width: 128rpx;
+    height: 49rpx;
+}
+
+.carClass .texts {
+    padding: 29rpx 30rpx;
+    font-size: 13px;
+}
+
+.carClass .texts text {
+    margin-right: 20rpx;
+}
+#image {
+    width: 17rpx;
+    height: 28rpx; 
+    float: right;
+    margin-top: 10rpx;
+}
+.logo2{
+    width:100%;
+    margin-top: 10rpx;
+    /* margin-bottom: 10rpx; */
+}
+.displayNo{
+    display: none;
+}

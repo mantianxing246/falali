@@ -1,0 +1,115 @@
+<import src="../template/loading/loading.wxml"></import>
+<view class="loading-view" wx:if="{{!imgLoaded}}"><template is="loading"></template></view>
+
+<view class="container bold" wx:if="{{imgLoaded}}">
+    <view class="bj">
+        <image src="{{dealer_info.picture}}" class="topImg"></image>
+        <view class="select">
+            <view>
+                <view class="dselect-city" bindtap="selectCityButton">
+                    <view class="imgLayout">
+                        <text>{{index==-1?"上海市":selectCity[index]}}</text>
+                        <image src="/images/icon-dropdown.png"></image>
+                    </view>
+                </view>
+                <!-- <picker range="{{selectCity}}" value="{{index}}" mode="selector" class="dselect-city"
+                    bindchange="bindPickerChange">
+                    <view class="imgLayout">
+                        <text>{{index==-1?"选择市":selectCity[index]}}</text>
+                        <image src="/images/icon-dropdown.png"></image>
+                    </view>
+                </picker> -->
+            </view>
+            <view>
+                <view class="dselect-distributor" bindtap="selectDistributor">
+                    <view class="imgLayout">
+                        <text>{{index2==-1?"选择经销商":selectDistributor[index2].dealer_short}}</text>
+                        <image src="/images/icon-dropdown.png"></image>
+                    </view>
+                </view>
+                <!-- <picker class="dselect-distributor" range="{{selectDistributor}}" value="{{index2}}" mode="selector"
+                    bindchange="bindPickerChange2" range-key="dealer_short">
+                    <view class="imgLayout">
+                        <text>{{index2==-1?"选择经销商":selectDistributor[index2].dealer_short}}</text>
+                        <image src="/images/icon-dropdown.png"></image>
+                    </view>
+                </picker> -->
+            </view>
+        </view>
+        <view class="text">
+            <view style="font-size: 18px;">{{dealer_info.h3Text}}</view>
+            <!-- <view style="font-size: 12px;">{{dealer_info.english_name}}</view> -->
+            <view style="font-size: 14px;">{{dealer_info.pText?"地址："+dealer_info.pText:""}}</view>
+            <view style="font-size: 14px;">{{dealer_info.phone?"电话："+dealer_info.phone:""}}</view>
+        </view>
+    </view>
+    <view class="bottom">
+        <view bindtap="phoneClick">
+            <image src="/images/customer-service.png"></image>
+            <text>电话</text>
+        </view>
+        <view class="active" bindtap="navigationClick">
+            <image src="/images/navigation.png"></image>
+            <text>导航</text>
+        </view>
+    </view>
+</view>
+
+
+<view class="phone-select-model bold" bindtap="cancel" hidden="{{hideFlag}}">
+    <view class="phoneSelect" animation="{{animation}}">
+        <view id="isPhone">是否拨打电话？</view>
+        <view bindtap="phoneFun">{{dealer_info.phone}}</view>
+        <view bindtap="cancel">取消</view>
+    </view>
+</view>
+
+
+<!-- 选择市 -->
+<view class="city bold" hidden="{{cityFlag}}" bindtap="cancelCity">
+    <view class="city-select-view" animation="{{animation2}}">
+        <view class="city-select-button">
+            <view>取消</view>
+            <view bindtap="bindPickerChange">确定</view>
+        </view>
+        <view class="city-body">
+            <picker-view indicator-style="height: 80rpx" style="width: 100%; height: 500rpx;" value="{{value}}"
+                bindchange="bindchange1">
+                <picker-view-column>
+                    <view wx:for="{{selectCity}}" wx:key="{{index}}" style="line-height: 80rpx;text-align: center;">
+                        {{item}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+</view>
+
+<!-- 选择经销商 --> 
+<view class="city bold" hidden="{{distributorFlag}}" bindtap="cancelDistributor">
+    <view class="city-select-view" animation="{{animation2}}">
+        <view class="city-select-button">
+            <view>取消</view>
+            <view bindtap="bindPickerChange2">确定</view>
+        </view>
+        <view class="city-body">
+            <picker-view indicator-style="height: 80rpx" style="width: 100%; height: 500rpx;" value="{{value}}"
+                bindchange="bindchange2">
+                <picker-view-column>
+                    <view wx:for="{{selectDistributor}}" wx:key="{{index}}"
+                        style="line-height: 80rpx;text-align: center;">
+                        {{item.dealer_short}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+</view>
+
+
+<view class="city" hidden="{{dwz}}">
+    <view class="location-map">
+        <view class="location-map-view">
+            <image src="https://ferrari.3tilabs.com/h5/images/location-logo.gif" class="gifImg" onload="imgLoad"></image>
+            <view style="padding: 20rpx;" wx:if="{{imgLoaded}}">定位中</view>
+        </view>
+    </view>
+</view>
